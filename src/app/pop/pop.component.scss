@@ -1,0 +1,44 @@
+@use './../../assets/theme/theme.scss' as c;
+:host{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.modal-body{
+  height: 40vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  p{
+    text-align: center;
+    color: c.$tertiary;
+  }
+  img{
+    height: 15vh;
+    width: 10vh;
+    margin-bottom: 10vh;
+    margin-top: 0;
+  }
+}
+
+.modal-footer{
+  justify-content: center;
+  align-items: center;
+  border: none;
+  button{
+    border-radius: 20px;
+    background-color: c.$primary;
+    color: c.$white;
+    border: none;
+    width: 20%;
+    height: 5vh;
+    font-size: 0.825rem;
+
+    &:hover{
+      background-color: c.$white;
+      color: c.$primary;
+      outline: solid c.$primary;
+    }
+  }
+}

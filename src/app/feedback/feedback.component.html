@@ -1,0 +1,42 @@
+<header>
+  <div class="logo">
+    <img src="./../../assets/img/logo.png" alt="">
+  </div>
+</header>
+
+<section class="feedback">
+  <form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h3>Leave a feedback!</h3>
+    <h5>Rate your experience from 0 to 5 stars:</h5>
+    <ngb-rating [max]="5" formControlName="experienceRating">
+      <ng-template let-fill="fill" >
+        <span class="defaultStar" [class.filled]="fill === 100" [class.notfilled]="fill === 0">
+          <span class="paintedStar"[style.width.%]="fill">★</span>  ★
+        </span>
+      </ng-template>
+    </ngb-rating>
+    <hr>
+    <h5>How sastified are you with the payment process?</h5>
+    <ngb-rating [max]="5" formControlName="paymentRating">
+      <ng-template let-fill="fill" >
+        <span class="defaultStar" [class.filled]="fill === 100" [class.notfilled]="fill === 0">
+          <span class="paintedStar"[style.width.%]="fill">★</span>  ★
+        </span>
+      </ng-template>
+    </ngb-rating>
+    <hr>
+    <h5>How sastified are you with our customer service?</h5>
+    <ngb-rating [max]="5" formControlName="serviceRating">
+      <ng-template let-fill="fill" >
+        <span class="defaultStar" [class.filled]="fill === 100" [class.notfilled]="fill === 0">
+          <span class="paintedStar"[style.width.%]="fill">★</span>  ★
+        </span>
+      </ng-template>
+    </ngb-rating>
+
+    <h5 style="margin: 2vh 0;">Please leave a comment about your experience bellow:</h5>
+    <textarea name="" id="" cols="80" rows="10" placeholder="Type your comment here"formControlName="feedbackComment"></textarea>
+
+    <button type="submit">SEND FEEDBACK</button>
+  </form>
+</section>
